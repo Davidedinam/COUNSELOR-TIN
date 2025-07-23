@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system for Counselor Tina - Christian Counseling Platform
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Spiritual & Peaceful Color Palette */
+    --background: 120 20% 98%;
+    --foreground: 140 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 15% 15%;
+
+    /* Soft sage green primary */
+    --primary: 140 35% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 140 40% 85%;
+    --primary-glow: 140 35% 65%;
+
+    /* Warm secondary tones */
+    --secondary: 30 25% 92%;
+    --secondary-foreground: 140 15% 25%;
+
+    --muted: 120 15% 95%;
+    --muted-foreground: 140 10% 50%;
+
+    /* Gentle accent colors */
+    --accent: 200 30% 85%;
+    --accent-foreground: 200 40% 25%;
+    --accent-warm: 25 50% 88%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 20% 88%;
+    --input: 140 20% 92%;
+    --ring: 140 35% 45%;
+
+    /* Spiritual gradient colors */
+    --gradient-primary: linear-gradient(135deg, hsl(140 35% 45%), hsl(140 40% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(140 35% 45% / 0.9), hsl(200 30% 40% / 0.8));
+    --gradient-peaceful: linear-gradient(180deg, hsl(120 20% 98%), hsl(140 25% 95%));
+    
+    /* Elegant shadows */
+    --shadow-peaceful: 0 4px 20px hsl(140 35% 45% / 0.15);
+    --shadow-gentle: 0 2px 10px hsl(140 20% 30% / 0.1);
+    --shadow-spiritual: 0 8px 32px hsl(140 35% 45% / 0.2);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with spiritual evening tones */
+    --background: 140 20% 8%;
+    --foreground: 120 15% 92%;
+
+    --card: 140 15% 12%;
+    --card-foreground: 120 15% 92%;
+
+    --popover: 140 15% 12%;
+    --popover-foreground: 120 15% 92%;
+
+    --primary: 140 40% 70%;
+    --primary-foreground: 140 20% 8%;
+    --primary-light: 140 30% 25%;
+    --primary-glow: 140 45% 75%;
+
+    --secondary: 140 10% 18%;
+    --secondary-foreground: 120 15% 85%;
+
+    --muted: 140 8% 15%;
+    --muted-foreground: 120 10% 65%;
+
+    --accent: 200 25% 25%;
+    --accent-foreground: 200 30% 85%;
+    --accent-warm: 25 30% 20%;
+
+    --destructive: 0 65% 65%;
+    --destructive-foreground: 140 20% 8%;
+
+    --border: 140 15% 22%;
+    --input: 140 12% 18%;
+    --ring: 140 40% 70%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(140 40% 70%), hsl(140 45% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(140 20% 8% / 0.9), hsl(200 25% 15% / 0.8));
+    --gradient-peaceful: linear-gradient(180deg, hsl(140 20% 8%), hsl(140 15% 12%));
+
+    /* Dark mode shadows */
+    --shadow-peaceful: 0 4px 20px hsl(140 40% 70% / 0.2);
+    --shadow-gentle: 0 2px 10px hsl(140 20% 5% / 0.3);
+    --shadow-spiritual: 0 8px 32px hsl(140 40% 70% / 0.25);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Spiritual Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .animate-gentle-scale {
+    animation: gentleScale 0.6s ease-out;
+  }
+
+  .animate-peaceful-slide {
+    animation: peacefulSlide 1s ease-out;
+  }
+
+  /* Button Variants */
+  .btn-spiritual {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-8 py-3 rounded-full font-medium shadow-peaceful hover:shadow-spiritual transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-gentle {
+    @apply bg-accent text-accent-foreground px-6 py-2 rounded-lg font-medium shadow-gentle hover:shadow-peaceful transition-all duration-300;
+  }
+
+  /* Spiritual Card Styles */
+  .card-peaceful {
+    @apply bg-card border border-border rounded-2xl p-6 shadow-gentle hover:shadow-peaceful transition-all duration-300;
+  }
+
+  .section-spiritual {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  /* Custom Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gentleScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes peacefulSlide {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Gradient utilities */
+  .bg-gradient-spiritual {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-peaceful {
+    background: var(--gradient-peaceful);
+  }
+
+  /* Shadow utilities */
+  .shadow-peaceful {
+    box-shadow: var(--shadow-peaceful);
+  }
+
+  .shadow-gentle {
+    box-shadow: var(--shadow-gentle);
+  }
+
+  .shadow-spiritual {
+    box-shadow: var(--shadow-spiritual);
+  }
+}
